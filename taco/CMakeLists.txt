@@ -16,42 +16,15 @@
 # below are examples, after initialization, modify it to your own.
 ###########################################################################
 ###kmcmake_example
-kmcmake_cc_library(
-        NAMESPACE ${PROJECT_NAME}
-        NAME foo
-        SOURCES
-        foo.cc
-        CXXOPTS
-        ${KMCMAKE_CXX_OPTIONS}
-        PLINKS
-        ${KMCMAKE_DEPS_LINK}
-        PUBLIC
-)
+
 
 kmcmake_cc_interface(
         NAMESPACE ${PROJECT_NAME}
         NAME api
         HEADERS
-        api.h
+        version.h
+        doubly_buffered_data.h
         CXXOPTS
         ${KMCMAKE_CXX_OPTIONS}
         PUBLIC
 )
-
-kmcmake_cc_binary(
-        NAMESPACE ${PROJECT_NAME}
-        NAME shared_main
-        SOURCES
-        main.cc
-        CXXOPTS
-        ${KMCMAKE_CXX_OPTIONS}
-        DEPS
-        ${PROJECT_NAME}::foo
-        LINKS
-        ${KMCMAKE_DEPS_LINK}
-        ${PROJECT_NAME}::foo
-        PUBLIC
-)
-
-
-###kmcmake_example

@@ -14,7 +14,7 @@ taco
 [中文版](./README_CN.md)
 
 
-taco Project Description
+taco is the multi thread concurrency container or tools for high performance.
 
 ## 🛠️ Build
 
